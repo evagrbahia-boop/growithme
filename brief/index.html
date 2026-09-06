@@ -364,7 +364,7 @@ button.ghost:hover{background:var(--blush);color:var(--brand)}
   </div>
   <details class="raw">
     <summary>Voir et copier le récapitulatif complet</summary>
-    <p style="margin:10px 0;color:var(--soft);font-size:13.5px">Si votre messagerie ne s'ouvre pas, copiez ce texte et envoyez-le à grosjeaneva@outlook.fr.</p>
+    <p style="margin:10px 0;color:var(--soft);font-size:13.5px">Si votre messagerie ne s'ouvre pas, copiez ce texte et envoyez-le à contact.growithme@gmail.com.</p>
     <textarea id="out" readonly aria-label="Récapitulatif de votre demande"></textarea>
     <div class="acts"><button type="button" id="copy">Copier le récapitulatif</button></div>
   </details>
@@ -504,7 +504,7 @@ button.ghost:hover{background:var(--blush);color:var(--brand)}
   document.getElementById('send').addEventListener('click',function(){
     var m=collect().map;
     var who=(m['Projet / marque']&&m['Projet / marque'][0])||(m['Nom et prénom']&&m['Nom et prénom'][0])||'nouveau projet';
-    var url='mailto:grosjeaneva@outlook.fr?subject='+encodeURIComponent('Appel gratuit · '+who)
+    var url='mailto:contact.growithme@gmail.com?subject='+encodeURIComponent('Appel gratuit · '+who)
       +'&body='+encodeURIComponent('Bonjour Eva,\n\nJ’aimerais réserver un appel pour parler de mon projet.\nVoici mes réponses au questionnaire.\n\n'+(built||out.value));
     window.location.href=url;
   });
