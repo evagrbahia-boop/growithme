@@ -1,0 +1,1 @@
+{'eva_camera': '8187fc07926c.jpg', 'gutti_scene': 'f09cd18ef9ed.jpg', 'studio': 'f66d069d39ab.jpg', 'plateau': 'c677297db149.jpg', 'cafe': 'c70ed8a08af3.jpg'}
