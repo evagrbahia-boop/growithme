@@ -155,6 +155,9 @@ p{margin:0 0 14px}
 @media(max-width:900px){.works{grid-template-columns:1fr}.w .fr,.w .plate{aspect-ratio:4/3}}
 
 .team{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(22px,3.4vw,48px)}
+.net{background:var(--choco);color:var(--rose);border-top-color:var(--rose2);justify-content:center;text-align:left}
+.net h3{color:var(--rose)}.net .role{color:var(--rose2)}.net p{color:var(--rose2);max-width:44ch}
+.team{align-items:stretch}
 .mb{background:#FFF7F3;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:10px;border-top:3px solid var(--bordeaux)}
 .mb h3{font-family:Ultra,serif;font-weight:400;font-size:clamp(21px,2.4vw,30px);margin:0;line-height:1.05}
 .mb .role{color:var(--bordeaux);font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
@@ -182,6 +185,9 @@ p{margin:0 0 14px}
 .foot .in{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center;
  padding:20px var(--gut);max-width:var(--max);margin:0 auto;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase}
 .foot img{height:12px;opacity:.75}
+.foot .social{display:flex;gap:22px}
+.foot .social a{text-decoration:none;border-bottom:1px solid var(--lineDark);padding-bottom:2px}
+.foot .social a:hover{border-color:var(--rose)}
 .procwrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,3.4vw,56px);align-items:start}
 .vert{writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(44px,7.4vw,104px);color:var(--rose);align-self:start;margin:0}
 @media(max-width:900px){.procwrap{grid-template-columns:1fr}.vert{writing-mode:horizontal-tb;transform:none;font-size:clamp(34px,8vw,60px);order:-1;margin-bottom:18px}}
@@ -199,6 +205,8 @@ p{margin:0 0 14px}
 .gal img:hover{transform:scale(1.03)}
 @media(max-width:900px){.gal{grid-template-columns:1fr 1fr}}
 .pink .btn.dk{background:var(--rose);color:var(--bordeaux)}.pink .btn.dk:hover{background:var(--choco);color:var(--rose)}
+.logoblock{aspect-ratio:3/4;background:var(--bordeaux);display:flex;align-items:center;justify-content:center;padding:12%}
+.logoblock img{width:100%;height:auto;filter:brightness(0) invert(1) sepia(.12) saturate(1.4) hue-rotate(-8deg)}
 .stripe{height:36px;background:repeating-linear-gradient(-45deg,var(--choco) 0 12px,var(--rose) 12px 24px);opacity:.92}
 </style>
 </head>
@@ -239,7 +247,7 @@ p{margin:0 0 14px}
 <section class="band"><div class="wrap">
   <div class="head"><span class="lab">Pourquoi nous</span><span class="rule"></span></div>
   <div class="two narrow" style="align-items:center">
-    <img src="assets/1e52c23940b1.jpg" alt="Shooting dirigé en décor" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 35%">
+    <div class="logoblock"><img src="assets/66b47d11eda6.png" alt="Monogramme growith me."></div>
     <div>
       <h2 class="t d">Dans un univers saturé, le talent ne suffit plus.</h2>
       <p class="lede">Sans stratégie claire, sans positionnement affirmé et sans image cohérente, même les meilleurs projets stagnent.</p>
@@ -383,8 +391,8 @@ p{margin:0 0 14px}
 </div></section>
 
 <section class="band dark" id="projets"><div class="wrap">
-  <div class="head"><span class="lab">Nos projets</span><span class="rule"></span></div>
-  <h2 class="t d">Plus qu'un accompagnement,<br>un partenaire.</h2>
+  <div class="head"><span class="lab">Nos derniers projets</span><span class="rule"></span></div>
+  <h2 class="t d">Nous sommes fières<br>de ces projets.</h2>
   <p class="lede muted">Nous ne vendons pas de solutions toutes faites. Nous construisons des stratégies alignées, pensées pour durer et évoluer avec vous.</p>
   <div class="works" style="margin-top:clamp(30px,4vw,54px)">
     <article class="w">
@@ -447,10 +455,10 @@ p{margin:0 0 14px}
         <a href="https://instagram.com/growithme.agency" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <div class="mb" style="background:var(--choco);color:var(--rose);border-top-color:var(--rose2)">
-      <h3 style="color:var(--rose)">Le réseau</h3>
-      <span class="role" style="color:var(--rose2)">Collaborateurs par projet</span>
-      <p style="color:var(--rose2)">Photographes, vidéastes, graphistes, stylistes, régisseurs. Nous travaillons en collaboration, avec des profils sélectionnés selon la demande, le budget et le rendu attendu. C'est ce qui permet d'ajuster une équipe à un projet plutôt que l'inverse.</p>
+    <div class="mb net">
+      <h3>Le réseau</h3>
+      <span class="role">Collaborateurs par projet</span>
+      <p>Photographes, vidéastes, graphistes, stylistes. Nous sélectionnons les profils selon la demande, le budget et le rendu attendu. Une équipe ajustée au projet, jamais l'inverse.</p>
     </div>
   </div>
 </div></section>
@@ -477,10 +485,8 @@ p{margin:0 0 14px}
     <img src="assets/4880ffb365ec.jpg" alt="Invités autour d'une table pendant la launch party">
     <img src="assets/dc5db6072f83.jpg" alt="Échanges entre invités pendant la soirée">
     <img src="assets/6f7fa3958143.jpg" alt="Invitées dans l'espace bibliothèque">
-    <img src="assets/6b0a6e9e0653.jpg" alt="Coin photo de la soirée sur fond jaune">
     <img src="assets/562318633fe0.jpg" alt="Deux invités pendant la launch party">
     <img src="assets/a8354e9cccfa.jpg" alt="Atelier peinture proposé aux invités">
-    <img src="assets/1a06397d0f62.jpg" alt="Invitée devant le fond jaune du coin photo">
     <img src="assets/4753be3b4d18.jpg" alt="Invitée dans l'espace bibliothèque">
   </div>
   <p class="muted" style="margin-top:20px;max-width:56ch;font-size:15px">Un événement culturel avec des créateurs de contenu, imaginé et produit de bout en bout pour annoncer l'agence.</p>
@@ -501,7 +507,6 @@ p{margin:0 0 14px}
   <div class="cgrid">
     <div><span class="lab">Écrire</span><a href="mailto:contact.growithme@gmail.com">contact.growithme@gmail.com</a></div>
     <div><span class="lab">Réserver un appel</span><a href="https://calendly.com/contact-growithme" target="_blank" rel="noopener">Calendly · 30 minutes</a></div>
-    <div><span class="lab">Instagram</span><a href="https://instagram.com/growithme.agency" target="_blank" rel="noopener">@growithme.agency</a></div>
     <div><span class="lab">Où</span>Bruxelles et Paris<br>Nous nous déplaçons partout en Europe</div>
   </div>
   <div class="callbox">
@@ -515,7 +520,8 @@ p{margin:0 0 14px}
 
 <footer class="foot"><div class="in">
   <img src="assets/e86e6b9ccac2.png" alt="growith me.">
-  <span>Cabinet de consulting créatif · Bruxelles · Paris · Europe</span>
+  <span class="social"><a href="https://instagram.com/growithme.agency" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/growithme" target="_blank" rel="noopener">LinkedIn</a></span>
+  <span>Bruxelles · Paris · Europe</span>
   <span>© 2026 growith me.</span>
 </div></footer>
 
