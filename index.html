@@ -191,6 +191,14 @@ p{margin:0 0 14px}
 .st .n{font-family:Ultra,serif;font-size:18px;color:var(--rose2);font-variant-numeric:tabular-nums;line-height:1.2}
 .st h3{font-family:Ultra,serif;font-weight:400;font-size:clamp(18px,2.1vw,25px);margin:0 0 6px;line-height:1.1;color:var(--rose);text-transform:uppercase;letter-spacing:.02em}
 .st p{font-size:14.5px;color:var(--rose2);margin:0;max-width:62ch}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pics img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.pics img:last-child{margin-top:clamp(20px,3.4vw,48px)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .4s ease}
+.gal img:hover{transform:scale(1.03)}
+@media(max-width:900px){.gal{grid-template-columns:1fr 1fr}}
+.pink .btn.dk{background:var(--rose);color:var(--bordeaux)}.pink .btn.dk:hover{background:var(--choco);color:var(--rose)}
 .stripe{height:36px;background:repeating-linear-gradient(-45deg,var(--choco) 0 12px,var(--rose) 12px 24px);opacity:.92}
 </style>
 </head>
@@ -453,15 +461,28 @@ p{margin:0 0 14px}
 <section class="band tight pink"><div class="wrap">
   <div class="two wide" style="align-items:center">
     <div>
-      <p class="lab" style="color:var(--bordeaux);margin:0 0 16px">Grow with purpose</p>
-      <h2 class="t d" style="margin:0">Un partenaire<br>stratégique à vos côtés.</h2>
-    </div>
-    <div>
+      <p class="lab" style="color:var(--rose2);margin:0 0 16px">Grow with purpose</p>
+      <h2 class="t d" style="color:var(--rose);margin:0 0 16px">Un partenaire<br>stratégique à vos côtés.</h2>
       <p>Nous croyons que les projets qui réussissent sont ceux qui sont bien entourés, bien pensés et alignés avec leur ambition profonde.</p>
-      <p style="margin-bottom:22px">Que vous soyez une marque, un entrepreneur ou un créateur, nous sommes là pour vous aider à passer un cap, à reprendre confiance en votre vision et à faire grandir votre projet avec justesse.</p>
+      <p style="margin-bottom:24px">Que vous soyez une marque, un entrepreneur ou un créateur, nous sommes là pour vous aider à passer un cap et à faire grandir votre projet avec justesse.</p>
       <a class="btn dk" href="/brief/">Prêt à faire évoluer votre projet ?</a>
     </div>
+    <div class="pics">
+      <img src="assets/0bea96149e47.jpg" alt="Séance de conseil avec des clients">
+      <img src="assets/abec97cc5593.jpg" alt="Launch party de l'agence">
+    </div>
   </div>
+</div></section>
+
+<section class="band tight"><div class="wrap">
+  <div class="head"><span class="lab">La launch party · 6 septembre 2025</span><span class="rule"></span></div>
+  <div class="gal">
+    <img src="assets/4880ffb365ec.jpg" alt="Invités autour d'une table pendant la launch party">
+    <img src="assets/dc5db6072f83.jpg" alt="Échanges entre invités pendant la soirée">
+    <img src="assets/6f7fa3958143.jpg" alt="Invitées dans l'espace bibliothèque">
+    <img src="assets/6b0a6e9e0653.jpg" alt="Coin photo de la soirée sur fond jaune">
+  </div>
+  <p class="muted" style="margin-top:20px;max-width:56ch;font-size:15px">Un événement culturel avec des créateurs de contenu, imaginé et produit de bout en bout pour annoncer l'agence.</p>
 </div></section>
 
 <section class="band tight pale"><div class="wrap">
