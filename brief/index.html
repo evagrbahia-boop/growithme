@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Brief · growith me.</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Parlez-moi de votre projet : le questionnaire de growith me., avec votre estimation.">
+<meta property="og:title" content="Brief growith me.">
+<meta property="og:description" content="Parlez-moi de votre projet : le questionnaire de growith me., avec votre estimation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ultra&family=Work+Sans:wght@300;400;500;600;700&display=swap">
+<style>
+:root{color-scheme:light;
+ --paper:#F2E7DE;--blush:#FAEAE1;--ink:#1C120E;--brand:#561D2C;--greige:#C9BEB3;
+ --soft:#6E5A50;--line:rgba(28,18,14,.18);--gut:clamp(20px,5vw,64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Work Sans",system-ui,sans-serif;
+ font-weight:300;font-size:16px;line-height:1.55;padding-bottom:96px}
+.d{font-family:Ultra,"Cooper Black",Georgia,serif;font-weight:400;color:var(--brand);line-height:1;letter-spacing:-.3px}
+.wrap{max-width:800px;margin:0 auto;padding:0 var(--gut)}
+.lab{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--brand)}
+a{color:var(--brand)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+.hero{background:var(--ink);color:var(--blush);padding:clamp(44px,7vw,76px) 0 clamp(38px,6vw,60px);margin-bottom:clamp(30px,5vw,52px)}
+.hero .d{color:var(--blush);font-size:clamp(34px,6.4vw,60px);margin:14px 0 18px}
+.hero .wm{width:min(300px,62%);margin:0 0 22px}
+.hero p{max-width:56ch;margin:0;opacity:.88;font-size:16px}
+
+h2.sec{font-family:Ultra,serif;font-weight:400;color:var(--ink);font-size:clamp(21px,3vw,28px);
+ margin:0 0 6px;line-height:1.1}
+.sec-note{color:var(--soft);font-size:14px;margin:0 0 22px;max-width:60ch}
+section.blk{border-top:2px solid var(--ink);padding:clamp(28px,4vw,44px) 0}
+section.blk:first-of-type{border-top:none;padding-top:0}
+
+.q{margin:0 0 26px}
+.q > label.t,.q > .t{display:block;font-weight:600;font-size:15.5px;margin-bottom:9px;color:var(--ink)}
+.q .hint{display:block;font-weight:300;color:var(--soft);font-size:13.5px;margin-top:3px}
+input[type=text],input[type=email],input[type=tel],input[type=date],textarea,select{
+ width:100%;font:inherit;font-weight:300;color:var(--ink);background:#fff;
+ border:1px solid var(--line);border-radius:0;padding:11px 13px}
+textarea{min-height:92px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 2px rgba(86,29,44,.16)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opts.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+ padding:11px 14px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--brand)}
+.opt input{margin:3px 0 0;accent-color:var(--brand);flex:none}
+.opt span{font-size:14.5px}
+.opt span b{display:block;font-weight:600;font-size:15px}
+.opt span em{display:block;font-style:normal;color:var(--soft);font-size:13px;margin-top:2px}
+.opt .pr{color:var(--brand);font-weight:600;white-space:nowrap}
+.opt:has(input:checked){border-color:var(--brand);background:var(--blush)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:620px){.grid2,.opts.two{grid-template-columns:1fr}}
+
+
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:var(--blush);
+ padding:13px var(--gut);display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:20}
+.bar .st{font-size:13px;opacity:.85}
+.bar .acts{display:flex;gap:10px}
+button{font:inherit;cursor:pointer;border:0;padding:12px 22px;font-size:12px;letter-spacing:.16em;
+ text-transform:uppercase;font-weight:600;background:var(--blush);color:var(--brand);transition:background .2s}
+button:hover{background:var(--brand);color:var(--blush)}
+button.ghost{background:transparent;color:var(--blush);border:1px solid rgba(250,234,225,.4)}
+button.ghost:hover{background:var(--blush);color:var(--brand)}
+
+#recap{background:#fff;border:2px solid var(--ink);padding:clamp(20px,3vw,30px);margin-top:30px}
+#recap h3{font-family:Ultra,serif;font-weight:400;color:var(--brand);margin:0 0 10px;font-size:20px}
+#recap textarea{min-height:280px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.5}
+#recap .acts{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#recap button{background:var(--ink);color:var(--blush)}
+#recap button:hover{background:var(--brand)}
+.miss{border-color:#A8341F!important;box-shadow:0 0 0 2px rgba(168,52,31,.15)}
+#recap .est{background:var(--ink);color:var(--blush);padding:clamp(22px,3.2vw,30px);margin:0 0 20px}
+#recap .est .lab{color:var(--greige);display:block;margin-bottom:12px}
+#recap .est .line{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+ padding:11px 0;border-top:1px solid rgba(250,234,225,.22);flex-wrap:wrap}
+#recap .est .line:first-of-type{border-top:none}
+#recap .est .line b{font-weight:600;font-size:15px}
+#recap .est .line .v{font-family:Ultra,serif;font-weight:400;font-size:clamp(19px,2.6vw,25px);
+ color:var(--blush);white-space:nowrap;font-variant-numeric:tabular-nums}
+#recap .est .line small{display:block;font-weight:300;color:var(--greige);font-size:13px;margin-top:2px}
+#recap .est .tot{border-top:2px solid var(--greige);margin-top:4px}
+#recap .est .tot .v{color:#F3D2C8}
+#recap .est .warn{background:rgba(243,210,200,.14);padding:12px 14px;margin-top:14px;font-size:13.5px;color:var(--blush)}
+#recap .est .note{margin:14px 0 0;font-size:13px;color:var(--greige)}
+#recap .cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 22px}
+#recap .cta button{background:var(--brand);color:var(--blush);padding:15px 28px;font-size:13px}
+#recap .cta button:hover{background:var(--ink)}
+#recap .cta .why{font-size:13.5px;color:var(--soft);max-width:32ch;margin:0}
+#recap .wa{display:flex;gap:18px;align-items:center;background:var(--blush);padding:18px 20px;margin:0 0 20px;flex-wrap:wrap}
+#recap .wa img{width:104px;height:104px;flex:none;background:#fff;padding:7px}
+#recap .wa .t2{font-weight:600;font-size:15px;margin:0 0 4px}
+#recap .wa p{margin:0;font-size:13.5px;color:var(--soft);max-width:38ch}
+#recap .wa a.b{display:inline-block;margin-top:10px;background:var(--brand);color:var(--blush);
+ text-decoration:none;padding:11px 20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+#recap .wa a.b:hover{background:var(--ink)}
+#recap details.raw{margin-top:6px}
+#recap details.raw summary{cursor:pointer;font-size:13px;color:var(--soft);font-weight:600}
+
+</style>
+
+<div class="hero"><div class="wrap">
+  <img class="wm" src="../assets/e86e6b9ccac2.png" alt="growith me.">
+  <h1 class="d">Parlez-moi de<br>votre projet</h1>
+  <p>Ce questionnaire remplace la première réunion. Il me dit où vous en êtes, ce que vous cherchez et dans quel budget, pour qu'on arrive au call avec une proposition déjà réfléchie plutôt qu'une page blanche. Chaque formule affiche son prix au moment où vous la choisissez, et vous repartez avec une estimation chiffrée. Comptez dix minutes, seules les questions marquées d'une étoile sont obligatoires.</p>
+</div></div>
+
+<div class="wrap">
+
+<form id="f" novalidate>
+
+<section class="blk">
+  <h2 class="sec">1 · Vous</h2>
+  <p class="sec-note">Le minimum pour vous recontacter.</p>
+  <div class="grid2">
+    <div class="q"><label class="t" for="nom">Nom et prénom *</label><input type="text" id="nom" name="Nom et prénom" required></div>
+    <div class="q"><label class="t" for="marque">Nom du projet, de la marque ou de l'entreprise *</label><input type="text" id="marque" name="Projet / marque" required></div>
+    <div class="q"><label class="t" for="mail">Adresse e-mail *</label><input type="email" id="mail" name="E-mail" required></div>
+    <div class="q"><label class="t" for="tel">Téléphone<span class="hint">Si vous préférez qu'on vous appelle.</span></label><input type="tel" id="tel" name="Téléphone" placeholder="+32 …"></div>
+  </div>
+  <div class="q"><label class="t" for="lien">Instagram, site web ou autre lien<span class="hint">Si vous en avez déjà un.</span></label><input type="text" id="lien" name="Lien" placeholder="@votrecompte"></div>
+  <div class="q"><span class="t">Où en êtes-vous ? *</span>
+    <div class="opts two">
+      <label class="opt"><input type="radio" name="Étape du projet" value="Lancement d'un nouveau projet" required><span><b>Je lance un nouveau projet</b></span></label>
+      <label class="opt"><input type="radio" name="Étape du projet" value="Rebranding / repositionnement"><span><b>Rebranding ou repositionnement</b><em>Un projet existant à structurer ou développer.</em></span></label>
+    </div>
+  </div>
+  <div class="q"><span class="t">De quoi avez-vous besoin ? *</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="Pôle" value="Direction artistique" required data-branch="da"><span><b>Une identité visuelle</b><em>Direction artistique, logo, charte, supports.</em></span></label>
+      <label class="opt"><input type="radio" name="Pôle" value="Communication" data-branch="com"><span><b>De la communication</b><em>Stratégie, contenu et réseaux sociaux.</em></span></label>
+      <label class="opt"><input type="radio" name="Pôle" value="Les deux" data-branch="both"><span><b>Les deux</b><em>L'identité, puis la faire vivre.</em></span></label>
+      <label class="opt"><input type="radio" name="Pôle" value="Je ne sais pas encore" data-branch="both"><span><b>Je ne sais pas encore</b><em>J'aimerais être conseillée.</em></span></label>
+    </div>
+  </div>
+</section>
+
+<section class="blk" data-for="da" hidden>
+  <h2 class="sec">2 · Votre identité visuelle</h2>
+  <p class="sec-note">Le pôle direction artistique.</p>
+  <div class="q"><span class="t">Quel pack vous intéresse ?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="Pack DA" value="Essentiel (600-900 €)"><span><b>Pack Essentiel <span class="pr">600 à 900 €</span></b></span></label>
+      <label class="opt"><input type="radio" name="Pack DA" value="Identité complète (1200-1600 €)"><span><b>Pack Identité complète <span class="pr">1 200 à 1 600 €</span></b></span></label>
+      <label class="opt"><input type="radio" name="Pack DA" value="Premium Brand Universe (2000-2800 €)"><span><b>Pack Premium · Brand Universe <span class="pr">2 000 à 2 800 €</span></b></span></label>
+      <label class="opt"><input type="radio" name="Pack DA" value="Petit budget, 500 € max"><span><b>Petit budget</b><em>500 € maximum, on en discute ensemble.</em></span></label>
+      <label class="opt"><input type="radio" name="Pack DA" value="Je ne sais pas, j'aimerais être conseillée"><span><b>Je ne sais pas encore</b><em>J'aimerais être conseillée.</em></span></label>
+    </div>
+  </div>
+  <div class="q"><span class="t">Votre budget maximum</span>
+    <div class="opts two">
+      <label class="opt"><input type="radio" name="Budget DA" value="Moins de 500 €"><span>Moins de 500 €</span></label>
+      <label class="opt"><input type="radio" name="Budget DA" value="600 à 1 000 €"><span>600 à 1 000 €</span></label>
+      <label class="opt"><input type="radio" name="Budget DA" value="1 000 à 1 600 €"><span>1 000 à 1 600 €</span></label>
+      <label class="opt"><input type="radio" name="Budget DA" value="Plus de 2 000 €"><span>Plus de 2 000 €</span></label>
+    </div>
+  </div>
+  <div class="q"><label class="t" for="da1">Votre activité en quelques phrases<span class="hint">Que proposez-vous, et à qui ?</span></label><textarea id="da1" name="Activité (DA)"></textarea></div>
+  <div class="q"><label class="t" for="da2">Votre public cible<span class="hint">Âge, style de vie, valeurs, attentes.</span></label><textarea id="da2" name="Public cible (DA)"></textarea></div>
+  <div class="grid2">
+    <div class="q"><label class="t" for="da3">Trois mots qui décrivent votre univers<span class="hint">Authentique, moderne, luxueux, naturel, urbain…</span></label><input type="text" id="da3" name="Trois mots (DA)"></div>
+    <div class="q"><label class="t" for="da4">Si votre marque était une personne<span class="hint">Confiante, douce, ambitieuse, audacieuse…</span></label><input type="text" id="da4" name="Marque = personne"></div>
+  </div>
+  <div class="q"><label class="t" for="da5">Vos inspirations visuelles<span class="hint">Des noms, des liens Instagram ou Pinterest.</span></label><textarea id="da5" name="Inspirations visuelles"></textarea></div>
+  <div class="grid2">
+    <div class="q"><span class="t">Avez-vous déjà des couleurs ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Couleurs" value="Oui"><span>Oui, je les décris ci-dessous</span></label>
+        <label class="opt"><input type="radio" name="Couleurs" value="Non, carte blanche"><span>Non, carte blanche</span></label>
+      </div>
+      <input type="text" name="Détail couleurs" placeholder="Lesquelles ?" style="margin-top:8px"></div>
+    <div class="q"><span class="t">Une typographie que vous aimez ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Typographie" value="Oui"><span>Oui</span></label>
+        <label class="opt"><input type="radio" name="Typographie" value="Non"><span>Non</span></label>
+        <label class="opt"><input type="radio" name="Typographie" value="Je vous laisse choisir"><span>Je vous laisse choisir</span></label>
+      </div>
+      <input type="text" name="Détail typographie" placeholder="Laquelle ?" style="margin-top:8px"></div>
+  </div>
+  <div class="q"><span class="t">Carte blanche, ou direction précise ?</span>
+    <div class="opts two">
+      <label class="opt"><input type="radio" name="Liberté créative" value="Carte blanche totale"><span>Carte blanche totale</span></label>
+      <label class="opt"><input type="radio" name="Liberté créative" value="J'ai une vision claire"><span>J'ai une vision claire</span></label>
+    </div>
+    <textarea name="Ma vision" placeholder="Si vous avez une vision, décrivez-la." style="margin-top:8px"></textarea></div>
+  <div class="q"><span class="t">Votre logo, avec une illustration ?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="Logo illustré" value="Oui, un élément illustré"><span>Oui, j'aimerais un élément illustré (icône, symbole, dessin)</span></label>
+      <label class="opt"><input type="radio" name="Logo illustré" value="Non, typographique minimaliste"><span>Non, je préfère un logo typographique minimaliste</span></label>
+      <label class="opt"><input type="radio" name="Logo illustré" value="Je ne sais pas, j'aimerais votre avis"><span>Je ne sais pas encore, j'aimerais votre avis</span></label>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="q"><span class="t">Une version courte du nom ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Diminutif" value="Oui, important"><span>Oui, c'est important pour moi</span></label>
+        <label class="opt"><input type="radio" name="Diminutif" value="Non, le nom complet"><span>Non, je préfère le nom complet</span></label>
+        <label class="opt"><input type="radio" name="Diminutif" value="Les deux"><span>Les deux options me plaisent</span></label>
+      </div></div>
+    <div class="q"><span class="t">Quel type de logo ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Type de logo" value="Typographique"><span>Typographique</span></label>
+        <label class="opt"><input type="radio" name="Type de logo" value="Avec icône ou symbole"><span>Avec icône ou symbole</span></label>
+        <label class="opt"><input type="radio" name="Type de logo" value="Les deux"><span>Les deux</span></label>
+        <label class="opt"><input type="radio" name="Type de logo" value="Je ne sais pas encore"><span>Je ne sais pas encore</span></label>
+      </div></div>
+  </div>
+  <div class="q"><span class="t">Quels supports vous intéressent ?</span>
+    <div class="opts two">
+      <label class="opt"><input type="checkbox" name="Supports" value="Réseaux sociaux"><span>Réseaux sociaux (templates, cohérence du feed)</span></label>
+      <label class="opt"><input type="checkbox" name="Supports" value="Packaging produit"><span>Packaging produit</span></label>
+      <label class="opt"><input type="checkbox" name="Supports" value="Carte de visite / flyer"><span>Carte de visite, flyer</span></label>
+      <label class="opt"><input type="checkbox" name="Supports" value="Signalétique"><span>Signalétique (affiches, vitrine, studio, restaurant)</span></label>
+      <label class="opt"><input type="checkbox" name="Supports" value="Site web / digital"><span>Site web, digital</span></label>
+    </div>
+  </div>
+  <div class="q"><label class="t" for="da9">Avez-vous un lieu physique ?<span class="hint">Boutique, studio, salon. Si oui, décrivez son ambiance.</span></label><input type="text" id="da9" name="Lieu physique" placeholder="Non, ou : oui et voilà l'ambiance…"></div>
+</section>
+
+<section class="blk" data-for="com" hidden>
+  <h2 class="sec">3 · Votre communication</h2>
+  <p class="sec-note">Le pôle réseaux sociaux.</p>
+  <div class="q"><span class="t">Quel pack vous intéresse ?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="Pack Com" value="Start (600-800 €/mois)"><span><b>Start · présence en ligne <span class="pr">600 à 800 € / mois</span></b><em>Audit, stratégie de contenu, ligne éditoriale, 6 posts par mois et suivi.</em></span></label>
+      <label class="opt"><input type="radio" name="Pack Com" value="Croissance (1000-1300 €/mois)"><span><b>Croissance · développement digital <span class="pr">1 000 à 1 300 € / mois</span></b><em>Stratégie complète, 8 à 10 posts par mois, stories, reporting mensuel.</em></span></label>
+      <label class="opt"><input type="radio" name="Pack Com" value="Premium (dès 1800 €/mois)"><span><b>Premium · direction de communication <span class="pr">dès 1 800 € / mois</span></b><em>Stratégie globale, production photo et vidéo, gestion totale, campagnes.</em></span></label>
+      <label class="opt"><input type="radio" name="Pack Com" value="Petit budget"><span><b>Petit budget</b><em>On en discute ensemble.</em></span></label>
+      <label class="opt"><input type="radio" name="Pack Com" value="Je ne sais pas, j'aimerais être conseillée"><span><b>Je ne sais pas encore</b><em>J'aimerais être conseillée.</em></span></label>
+    </div>
+  </div>
+  <div class="q"><span class="t">Sur combien de temps ?</span>
+    <div class="opts two">
+      <label class="opt"><input type="radio" name="Durée" value="1 mois test"><span>1 mois test</span></label>
+      <label class="opt"><input type="radio" name="Durée" value="3 mois"><span>3 mois</span></label>
+      <label class="opt"><input type="radio" name="Durée" value="6 mois"><span>6 mois</span></label>
+      <label class="opt"><input type="radio" name="Durée" value="12 mois"><span>12 mois, accompagnement annuel</span></label>
+    </div>
+  </div>
+  <div class="q"><label class="t" for="c1">Votre activité ou votre projet<span class="hint">Produits, services, valeur ajoutée.</span></label><textarea id="c1" name="Activité (Com)"></textarea></div>
+  <div class="q"><label class="t" for="c2">Votre message principal sur les réseaux</label><textarea id="c2" name="Message principal"></textarea></div>
+  <div class="q"><label class="t" for="c3">Votre public cible<span class="hint">Âge, centres d'intérêt, style, habitudes.</span></label><textarea id="c3" name="Public cible (Com)"></textarea></div>
+  <div class="grid2">
+    <div class="q"><label class="t" for="c4">Les valeurs ou émotions à transmettre<span class="hint">Confiance, élégance, authenticité, énergie, expertise…</span></label><input type="text" id="c4" name="Valeurs"></div>
+    <div class="q"><label class="t" for="c5">Trois mots qui résument votre univers</label><input type="text" id="c5" name="Trois mots (Com)"></div>
+  </div>
+  <div class="q"><label class="t" for="c6">Des marques ou des comptes qui vous inspirent<span class="hint">Les noms ou les liens.</span></label><textarea id="c6" name="Comptes inspirants"></textarea></div>
+  <div class="q"><span class="t">Votre ton de communication idéal</span>
+    <div class="opts two">
+      <label class="opt"><input type="radio" name="Ton" value="Professionnel / inspirant"><span>Professionnel, inspirant</span></label>
+      <label class="opt"><input type="radio" name="Ton" value="Authentique / naturel"><span>Authentique, naturel</span></label>
+      <label class="opt"><input type="radio" name="Ton" value="Éducatif / pédagogique"><span>Éducatif, pédagogique</span></label>
+      <label class="opt"><input type="radio" name="Ton" value="Luxe / élégant"><span>Luxe, élégant</span></label>
+      <label class="opt"><input type="radio" name="Ton" value="Dynamique / fun"><span>Dynamique, fun</span></label>
+      <label class="opt"><input type="radio" name="Ton" value="Minimaliste / épuré"><span>Minimaliste, épuré</span></label>
+    </div>
+  </div>
+  <div class="q"><span class="t">Sur quelles plateformes ?</span>
+    <div class="opts two">
+      <label class="opt"><input type="checkbox" name="Plateformes" value="Instagram"><span>Instagram</span></label>
+      <label class="opt"><input type="checkbox" name="Plateformes" value="TikTok"><span>TikTok</span></label>
+      <label class="opt"><input type="checkbox" name="Plateformes" value="Pinterest"><span>Pinterest</span></label>
+      <label class="opt"><input type="checkbox" name="Plateformes" value="LinkedIn"><span>LinkedIn</span></label>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="q"><span class="t">Avez-vous déjà une stratégie de contenu ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Stratégie existante" value="Oui, déjà en place"><span>Oui, déjà en place</span></label>
+        <label class="opt"><input type="radio" name="Stratégie existante" value="Partiellement"><span>Partiellement</span></label>
+        <label class="opt"><input type="radio" name="Stratégie existante" value="Non, tout est à créer"><span>Non, tout est à créer</span></label>
+      </div></div>
+    <div class="q"><span class="t">Combien de publications par semaine ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Fréquence" value="1 à 2 fois"><span>1 à 2 fois</span></label>
+        <label class="opt"><input type="radio" name="Fréquence" value="3 à 4 fois"><span>3 à 4 fois</span></label>
+        <label class="opt"><input type="radio" name="Fréquence" value="5 à 7 fois"><span>5 à 7 fois</span></label>
+      </div></div>
+  </div>
+  <div class="q"><span class="t">Sur quoi voulez-vous être aidé ?</span>
+    <div class="opts two">
+      <label class="opt"><input type="checkbox" name="Besoins Com" value="Ligne éditoriale et univers visuel"><span>Créer la ligne éditoriale et l'univers visuel</span></label>
+      <label class="opt"><input type="checkbox" name="Besoins Com" value="Gestion quotidienne des réseaux"><span>Gérer les réseaux au quotidien</span></label>
+      <label class="opt"><input type="checkbox" name="Besoins Com" value="Conception du contenu"><span>Concevoir le contenu (posts, stories, vidéos)</span></label>
+      <label class="opt"><input type="checkbox" name="Besoins Com" value="Formation de l'équipe"><span>Former l'équipe, ou vous-même</span></label>
+      <label class="opt"><input type="checkbox" name="Besoins Com" value="Accompagnement complet"><span>Tout, un accompagnement complet</span></label>
+    </div>
+  </div>
+  <div class="q"><span class="t">Avez-vous déjà du contenu ?</span>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="Contenu existant" value="J'ai déjà du contenu"><span>J'ai déjà du contenu à exploiter</span></label>
+      <label class="opt"><input type="radio" name="Contenu existant" value="Production à créer"><span>Je veux qu'on s'occupe de la production visuelle (shooting, DA, design)</span></label>
+      <label class="opt"><input type="radio" name="Contenu existant" value="Les deux"><span>Les deux</span></label>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="q"><span class="t">La validation des contenus</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Validation" value="Je valide chaque post"><span>Je veux valider chaque publication</span></label>
+        <label class="opt"><input type="radio" name="Validation" value="Confiance après validation de la stratégie"><span>Je fais confiance une fois la stratégie validée</span></label>
+      </div></div>
+    <div class="q"><span class="t">À quel rythme voulez-vous un point ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Reporting" value="Chaque semaine"><span>Chaque semaine</span></label>
+        <label class="opt"><input type="radio" name="Reporting" value="Chaque fin de mois"><span>Chaque fin de mois</span></label>
+        <label class="opt"><input type="radio" name="Reporting" value="Aux étapes clés"><span>Seulement aux étapes clés</span></label>
+      </div></div>
+  </div>
+  <div class="q"><span class="t">Les campagnes sponsorisées (Meta Ads, TikTok Ads)</span>
+    <div class="opts two">
+      <label class="opt"><input type="radio" name="Publicité" value="Oui"><span>Oui, à inclure</span></label>
+      <label class="opt"><input type="radio" name="Publicité" value="Non"><span>Non</span></label>
+      <label class="opt"><input type="radio" name="Publicité" value="Peut-être plus tard"><span>Peut-être plus tard</span></label>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2 class="sec">4 · Le calendrier, et le reste</h2>
+  <p class="sec-note">Deux dernières choses.</p>
+  <div class="grid2">
+    <div class="q"><span class="t">Le projet est-il urgent ?</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Urgence" value="Oui, deadline précise"><span>Oui, il y a une date limite</span></label>
+        <label class="opt"><input type="radio" name="Urgence" value="Non"><span>Non, pas d'urgence particulière</span></label>
+      </div></div>
+    <div class="q"><label class="t" for="dl">La date à tenir, s'il y en a une<span class="hint">Lancement, ouverture, événement, collaboration.</span></label><input type="date" id="dl" name="Date limite"></div>
+  </div>
+  <div class="q"><span class="t">Une prestation complémentaire ?</span>
+    <div class="opts two">
+      <label class="opt"><input type="checkbox" name="Bonus" value="Stratégie réseaux sociaux"><span>Accompagnement digital, stratégie réseaux</span></label>
+      <label class="opt"><input type="checkbox" name="Bonus" value="Direction artistique shooting"><span>Direction artistique d'un shooting</span></label>
+      <label class="opt"><input type="checkbox" name="Bonus" value="Identité visuelle complète"><span>Identité visuelle complète (logo, charte)</span></label>
+      <label class="opt"><input type="checkbox" name="Bonus" value="Identité visuelle d'événement"><span>Identité visuelle d'un événement</span></label>
+      <label class="opt"><input type="checkbox" name="Bonus" value="Site web / landing page"><span>Site web ou landing page</span></label>
+      <label class="opt"><input type="checkbox" name="Bonus" value="Organisation d'un lancement"><span>Organisation d'un lancement ou d'un événement</span></label>
+    </div>
+    <input type="text" name="Autre prestation" placeholder="Autre chose ?" style="margin-top:8px">
+  </div>
+  <div class="q"><label class="t" for="intent">En une phrase, votre intention derrière ce projet *<span class="hint">Par exemple : créer une marque qui me ressemble et attire ma clientèle idéale.</span></label><textarea id="intent" name="Intention" required></textarea></div>
+</section>
+
+<div id="recap" hidden>
+  <h3>Voici une idée de votre devis</h3>
+  <div class="est" id="est"></div>
+  <div class="cta">
+    <button type="button" id="send">Envoyer ma demande</button>
+    <p class="why">Votre récapitulatif part par mail. Je réponds sous 24 h avec une proposition.</p>
+  </div>
+  <div class="wa">
+    <img src="../assets/f5110adf14e1.svg" alt="QR code WhatsApp de growith me.">
+    <div>
+      <p class="t2">Ou parlons-en tout de suite sur WhatsApp</p>
+      <p>Scannez le code avec votre téléphone, ou cliquez si vous êtes déjà dessus. L'appel de trente minutes est gratuit et sans engagement.</p>
+      <a class="b" id="wa" href="https://wa.me/32491114758" target="_blank" rel="noopener">M'écrire sur WhatsApp</a>
+    </div>
+  </div>
+  <details class="raw">
+    <summary>Voir et copier le récapitulatif complet</summary>
+    <p style="margin:10px 0;color:var(--soft);font-size:13.5px">Si votre messagerie ne s'ouvre pas, copiez ce texte et envoyez-le à grosjeaneva@outlook.fr.</p>
+    <textarea id="out" readonly aria-label="Récapitulatif de votre demande"></textarea>
+    <div class="acts"><button type="button" id="copy">Copier le récapitulatif</button></div>
+  </details>
+</div>
+
+</form>
+</div>
+
+<div class="bar">
+  <span class="st" id="st">Choisissez ce dont vous avez besoin pour voir les questions.</span>
+  <div class="acts"><button type="button" id="go">Voir mon estimation</button></div>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('f');
+  var da=document.querySelector('[data-for="da"]');
+  var com=document.querySelector('[data-for="com"]');
+  var st=document.getElementById('st');
+  var recap=document.getElementById('recap');
+  var out=document.getElementById('out');
+
+  function branch(){
+    var r=form.querySelector('input[name="Pôle"]:checked');
+    var b=r?r.getAttribute('data-branch'):null;
+    da.hidden=!(b==='da'||b==='both');
+    com.hidden=!(b==='com'||b==='both');
+    if(b){st.textContent='Répondez à ce que vous pouvez, puis demandez votre estimation.';}
+  }
+  form.addEventListener('change',function(e){
+    if(e.target.name==='Pôle') branch();
+    e.target.closest('.q') && e.target.closest('.q').querySelectorAll('.miss').forEach(function(n){n.classList.remove('miss');});
+  });
+
+  function collect(){
+    var seen={},lines=[],order=[];
+    var visible=function(el){return !el.closest('[hidden]');};
+    form.querySelectorAll('input,textarea,select').forEach(function(el){
+      if(!el.name||!visible(el))return;
+      var v='';
+      if(el.type==='checkbox'){ if(!el.checked)return; v=el.value; }
+      else if(el.type==='radio'){ if(!el.checked)return; v=el.value; }
+      else { v=(el.value||'').trim(); if(!v)return; }
+      if(!seen[el.name]){seen[el.name]=[];order.push(el.name);}
+      seen[el.name].push(v);
+    });
+    order.forEach(function(k){ lines.push(k+' : '+seen[k].join(', ')); });
+    return {text:lines.join('\n'), map:seen};
+  }
+
+  function validate(){
+    var ok=true,first=null;
+    form.querySelectorAll('[required]').forEach(function(el){
+      if(el.closest('[hidden]'))return;
+      var bad=false;
+      if(el.type==='radio'){ bad=!form.querySelector('input[name="'+el.name+'"]:checked'); }
+      else bad=!(el.value||'').trim();
+      if(bad){ ok=false; var t=el.type==='radio'?el.closest('.q'):el; (t.classList?t:el).classList.add('miss'); if(!first)first=el; }
+    });
+    if(!ok&&first){ first.scrollIntoView({block:'center',behavior:'smooth'}); st.textContent='Il manque les champs marqués d’une étoile.'; }
+    return ok;
+  }
+
+  var built='';
+  var DA={'Essentiel (600-900 €)':[600,900],'Identité complète (1200-1600 €)':[1200,1600],
+          'Premium Brand Universe (2000-2800 €)':[2000,2800],'Petit budget, 500 € max':[0,500]};
+  var COM={'Start (600-800 €/mois)':[600,800],'Croissance (1000-1300 €/mois)':[1000,1300],
+           'Premium (dès 1800 €/mois)':[1800,null]};
+  var DUR={'1 mois test':1,'3 mois':3,'6 mois':6,'12 mois':12};
+  var BUD={'Moins de 500 €':500,'600 à 1 000 €':1000,'1 000 à 1 600 €':1600,'Plus de 2 000 €':null};
+
+  function eur(n){ return n.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g,' ')+' €'; }
+  function span(a,b,suffix){
+    if(b===null) return 'dès '+eur(a)+(suffix||'');
+    if(a===0) return 'jusqu’à '+eur(b)+(suffix||'');
+    return eur(a)+' à '+eur(b)+(suffix||'');
+  }
+  function line(label,value,note,cls){
+    return '<div class="line'+(cls?' '+cls:'')+'"><b>'+label+(note?'<small>'+note+'</small>':'')+'</b>'
+         + '<span class="v">'+value+'</span></div>';
+  }
+
+  function estimate(m){
+    var one=function(k){ return m[k]&&m[k][0]; };
+    var html='<span class="lab">Estimation indicative</span>';
+    var lo=0,hi=0,open=false,any=false,parts=[];
+
+    var pda=one('Pack DA');
+    if(pda&&DA[pda]){ var r=DA[pda]; any=true; lo+=r[0]; hi+=r[1];
+      parts.push(line('Identité visuelle', span(r[0],r[1]), pda.split(' (')[0])); }
+
+    var pcom=one('Pack Com'), dur=DUR[one('Durée')]||null;
+    if(pcom&&COM[pcom]){ var c=COM[pcom]; any=true;
+      parts.push(line('Communication', span(c[0],c[1],' / mois'), pcom.split(' (')[0]));
+      if(dur){
+        var tl=c[0]*dur, th=(c[1]===null?null:c[1]*dur);
+        parts.push(line('Sur '+dur+' mois', span(tl,th), one('Durée')));
+        lo+=tl; if(th===null){open=true;} else {hi+=th;}
+      } else { lo+=c[0]; if(c[1]===null){open=true;} else {hi+=c[1];} }
+    }
+
+    if(!any){
+      html+='<div class="line"><b>À définir ensemble<small>Vous n’avez pas encore choisi de formule, c’est très bien : on part de votre projet et je vous oriente.</small></b><span class="v">—</span></div>';
+      var b=one('Budget DA');
+      if(b) html+=line('Votre budget annoncé', b);
+      html+='<p class="note">Le devis final est établi après l’appel, une fois le périmètre calé.</p>';
+      return html;
+    }
+
+    html+=parts.join('');
+    if(parts.length>1) html+=line('Total estimé', open?('dès '+eur(lo)):span(lo,hi), null, 'tot');
+
+    var bk=one('Budget DA'), cap=bk?BUD[bk]:undefined;
+    if(cap!==undefined && cap!==null && lo>cap){
+      html+='<div class="warn">Votre budget annoncé ('+bk+') est en dessous de cette formule. Ce n’est pas bloquant : dites-le-moi pendant l’appel, on ajuste le périmètre pour rester dans vos moyens.</div>';
+    }
+    html+='<p class="note">Fourchette indicative, calculée sur les formules que vous avez cochées. Le devis définitif est établi après l’appel, une fois le périmètre précisé.</p>';
+    return html;
+  }
+
+  document.getElementById('go').addEventListener('click',function(){
+    if(!form.querySelector('input[name="Pôle"]:checked')){
+      st.textContent='Dites-moi d’abord de quoi vous avez besoin.';
+      form.querySelector('input[name="Pôle"]').closest('.q').scrollIntoView({block:'center',behavior:'smooth'});
+      return;
+    }
+    if(!validate())return;
+    var c=collect();
+    built='DEMANDE growith me.\n\n'+c.text+'\n';
+    out.value=built;
+    document.getElementById('est').innerHTML=estimate(c.map);
+    recap.hidden=false;
+    st.textContent='Estimation prête, il ne reste qu’à réserver l’appel.';
+    document.getElementById('wa').href=waLink();
+    recap.scrollIntoView({block:'start',behavior:'smooth'});
+  });
+
+  document.getElementById('send').addEventListener('click',function(){
+    var m=collect().map;
+    var who=(m['Projet / marque']&&m['Projet / marque'][0])||(m['Nom et prénom']&&m['Nom et prénom'][0])||'nouveau projet';
+    var url='mailto:grosjeaneva@outlook.fr?subject='+encodeURIComponent('Appel gratuit · '+who)
+      +'&body='+encodeURIComponent('Bonjour Eva,\n\nJ’aimerais réserver un appel pour parler de mon projet.\nVoici mes réponses au questionnaire.\n\n'+(built||out.value));
+    window.location.href=url;
+  });
+
+  function waLink(){
+    var m=collect().map, g=function(k){return (m[k]&&m[k][0])||'';};
+    var t='Bonjour Eva, je viens de remplir le questionnaire.'
+      +'\n\nProjet : '+(g('Projet / marque')||'—')
+      +'\nNom : '+(g('Nom et prénom')||'—')
+      +'\nBesoin : '+(g('Pôle')||'—');
+    var pk=g('Pack DA')||g('Pack Com'); if(pk) t+='\nFormule : '+pk;
+    var du=g('Durée'); if(du) t+='\nDurée : '+du;
+    t+='\n\nJ’aimerais réserver l’appel gratuit.';
+    return 'https://wa.me/32491114758?text='+encodeURIComponent(t);
+  }
+
+  document.getElementById('copy').addEventListener('click',function(){
+    var b=this;
+    var done=function(){ b.textContent='Copié'; setTimeout(function(){b.textContent='Copier le récapitulatif';},1800); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(out.value).then(done,function(){out.select();done();});
+    } else { out.select(); try{document.execCommand('copy');}catch(e){} done(); }
+  });
+
+  branch();
+})();
+</script>
+
+</body>
+</html>

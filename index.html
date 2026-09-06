@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>growith me.</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Agence de consulting créatif à Bruxelles et Paris : stratégie, direction artistique, contenu et événements.">
+<meta property="og:title" content="growith me.">
+<meta property="og:description" content="Agence de consulting créatif à Bruxelles et Paris : stratégie, direction artistique, contenu et événements.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#F2E7DE; --blush:#FAEAE1; --ink:#1C120E; --brand:#561D2C;
+  --greige:#C9BEB3; --ink-soft:#6E5A50;
+  --line:rgba(28,18,14,.16); --line-on-ink:rgba(250,234,225,.22);
+  --gut:clamp(20px,4.2vw,64px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Outfit",ui-sans-serif,system-ui,-apple-system,sans-serif;font-weight:300;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.d{font-family:"Anton",Impact,"Haettenschweiler",sans-serif;font-weight:400;
+  text-transform:uppercase;letter-spacing:.01em;line-height:.9;text-wrap:balance}
+.sr{font-family:"Gelasio",Georgia,serif;font-weight:400}
+.lab{font-size:11px;letter-spacing:.19em;text-transform:uppercase;font-weight:600}
+.band{padding:clamp(56px,7vw,104px) var(--gut)}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:60;background:var(--ink);color:var(--blush);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:11px var(--gut);border-bottom:1px solid var(--line-on-ink)}
+.top .mark{display:flex;align-items:center;gap:9px}
+.top .mark img{height:15px;width:auto}
+.top .mark img:first-child{height:20px}
+.top nav{display:flex;gap:clamp(14px,2.4vw,34px)}
+.top nav a{text-decoration:none;opacity:.82;font-size:11px;letter-spacing:.19em;
+  text-transform:uppercase;font-weight:500;transition:opacity .2s}
+.top nav a:hover{opacity:1}
+@media(max-width:640px){.top nav a:nth-child(-n+2){display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--ink);overflow:hidden}
+.hero .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:52% 42%;opacity:.5;filter:grayscale(.25) contrast(1.05)}
+.hero .veil{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(28,18,14,.72) 0%,rgba(28,18,14,.32) 38%,rgba(28,18,14,.86) 100%)}
+.hero .inner{position:relative;min-height:clamp(480px,64vw,720px);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:clamp(64px,9vw,110px) var(--gut) clamp(74px,8vw,96px)}
+.hero .eyebrow{color:var(--blush);opacity:.7;margin:0 0 clamp(22px,3vw,34px)}
+.hero .logo{width:min(1180px,100%);margin:0 0 clamp(24px,3vw,36px)}
+.hero .claim{color:var(--blush);max-width:34ch;font-size:clamp(17px,2vw,22px);
+  line-height:1.45;margin:0;font-weight:300}
+.hero .claim b{font-weight:600}
+
+/* ---------- marquee ---------- */
+.tick{background:var(--brand);color:var(--blush);overflow:hidden;
+  border-top:1px solid rgba(0,0,0,.2);border-bottom:1px solid rgba(0,0,0,.2)}
+.tick-in{display:flex;width:max-content;animation:slide 34s linear infinite}
+.tick span{padding:9px 26px;white-space:nowrap;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;font-weight:600}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tick-in{animation:none}.work .frame video{animation:none}}
+
+/* ---------- section scaffolding ---------- */
+.sec-head{display:flex;align-items:baseline;gap:16px;margin:0 0 clamp(26px,3.4vw,44px)}
+.sec-head .lab{color:var(--brand);white-space:nowrap}
+.sec-head .rule{flex:1;height:1px;background:var(--line)}
+.vert{writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:clamp(46px,7.6vw,104px);color:var(--ink);align-self:start}
+
+/* ---------- services ---------- */
+.services{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.15fr);
+  gap:clamp(20px,3.4vw,52px);align-items:start}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage .por{aspect-ratio:3/4}
+.collage .wide{grid-column:1/3;aspect-ratio:16/10}
+.collage figcaption{grid-column:1/3;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--brand);margin-top:2px}
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;padding:17px 2px;
+  font-size:clamp(14px,1.5vw,17px);font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .plus{flex:none;font-size:19px;line-height:1;color:var(--brand);
+  transition:transform .22s ease;font-weight:300}
+.acc details[open] summary .plus{transform:rotate(45deg)}
+.acc .body{padding:0 2px 19px;color:var(--ink-soft);font-size:14.5px;max-width:56ch}
+.btn{display:inline-block;margin-top:26px;padding:13px 26px;background:var(--ink);
+  color:var(--blush);text-decoration:none;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:600;transition:background .2s}
+.btn:hover{background:var(--brand)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--blush)}
+@media(max-width:900px){.services{grid-template-columns:1fr}.vert{writing-mode:horizontal-tb;transform:none}}
+
+/* ---------- mission ---------- */
+.mission{background:var(--brand);color:var(--blush);
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(24px,4vw,64px);align-items:center}
+.mission .say{font-size:clamp(21px,2.9vw,34px);line-height:1.3;margin:0 0 20px;max-width:22ch}
+.mission .say em{font-style:italic}
+.mission p.sub{max-width:46ch;opacity:.84;margin:0;font-size:15.5px}
+.mission .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mission .pics img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.mission .pics img:last-child{margin-top:clamp(18px,3vw,44px)}
+.mission .btn{background:var(--blush);color:var(--brand)}
+.mission .btn:hover{background:var(--ink);color:var(--blush)}
+@media(max-width:820px){.mission{grid-template-columns:1fr}}
+
+/* ---------- process ---------- */
+.process{background:var(--ink);color:var(--blush)}
+.process .sec-head .lab{color:var(--greige)}
+.process .sec-head .rule{background:var(--line-on-ink)}
+.proc-wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,3.4vw,52px)}
+.process .vert{color:var(--blush);opacity:.9}
+.steps{border-top:1px solid var(--line-on-ink)}
+.step{display:grid;grid-template-columns:64px minmax(0,1fr);gap:clamp(14px,2.4vw,30px);
+  padding:22px 2px;border-bottom:1px solid var(--line-on-ink);align-items:start}
+.step .n{font-family:"Anton",sans-serif;font-size:19px;color:var(--greige);
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.step h3{margin:0 0 6px;font-size:clamp(16px,1.8vw,21px);font-weight:600;
+  letter-spacing:.03em;text-transform:uppercase}
+.step p{margin:0;opacity:.78;font-size:14.5px;max-width:62ch}
+@media(max-width:900px){.proc-wrap{grid-template-columns:1fr}.process .vert{order:-1}}
+
+/* ---------- travaux ---------- */
+.works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,3.2vw,44px)}
+.work{display:flex;flex-direction:column;gap:13px}
+.work .frame{aspect-ratio:4/3;overflow:hidden;background:var(--blush)}
+.work .frame img,.work .frame video{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+.work:hover .frame video{transform:scale(1.035)}
+.work .reel{margin-top:4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--brand);text-decoration:none;border-bottom:1px solid var(--brand);align-self:flex-start;padding-bottom:2px}
+.work .reel:hover{color:var(--ink);border-color:var(--ink)}
+.work:hover .frame img{transform:scale(1.035)}
+.work .lab{color:var(--brand)}
+.work h3{margin:0;font-size:clamp(19px,2.2vw,27px)}
+.work p{margin:0;color:var(--ink-soft);font-size:14.5px}
+.work .kpi{margin-top:2px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:600;color:var(--ink)}
+.work.featured{grid-column:1/3;display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(20px,3.4vw,48px);align-items:center}
+.work.featured .frame{aspect-ratio:3/4}
+.work.featured .txt{display:flex;flex-direction:column;gap:12px}
+.work.featured h3{font-size:clamp(28px,3.6vw,44px)}
+.work.featured p{font-size:15px;max-width:54ch}
+@media(max-width:820px){.works{grid-template-columns:1fr}.work .frame{aspect-ratio:16/10}
+.work.featured{grid-column:auto;grid-template-columns:1fr}.work.featured .frame{aspect-ratio:16/10}}
+
+
+.poles{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.4vw,52px)}
+.pole{display:flex;flex-direction:column;gap:14px}
+.pole > .lab{color:var(--brand)}
+.pole h3{font-family:Ultra,serif;font-weight:400;font-size:clamp(22px,2.6vw,30px);color:var(--ink);margin:0;line-height:1.05}
+.pole .intro{font-size:14px;color:var(--ink-soft);margin:0}
+.offer{border-top:1px solid var(--line);padding:15px 2px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:baseline}
+.offer:last-of-type{border-bottom:1px solid var(--line)}
+.offer .nm{font-weight:600;font-size:15px;color:var(--ink)}
+.offer .pr{font-family:Ultra,serif;font-weight:400;font-size:17px;color:var(--brand);white-space:nowrap;font-variant-numeric:tabular-nums}
+.offer .de{grid-column:1/3;font-size:13px;color:var(--ink-soft);margin:0}
+.devis{background:var(--brand);color:var(--blush);padding:22px 26px;margin-top:26px;display:flex;
+  justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+.devis p{margin:0;font-size:15px;max-width:52ch}
+.devis .btn{background:var(--blush);color:var(--brand);margin-top:0;flex:none}
+.devis .btn:hover{background:var(--ink);color:var(--blush)}
+@media(max-width:820px){.poles{grid-template-columns:1fr}}
+
+/* ---------- témoignage ---------- */
+.quote-band{position:relative;padding-bottom:0}
+.quote{background:var(--blush);padding:clamp(30px,4.6vw,64px);max-width:66ch;
+  margin:0 auto;border-left:3px solid var(--brand)}
+.quote .mark{font-family:"Anton",sans-serif;font-size:54px;color:var(--brand);
+  opacity:.28;line-height:.6;margin:0 0 6px}
+.quote p{margin:0 0 20px;font-size:clamp(16px,1.9vw,21px);line-height:1.55}
+.quote .who{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;color:var(--brand)}
+.quote .who span{display:block;margin-top:4px;color:var(--ink-soft);font-weight:500;letter-spacing:.1em}
+.stripe{margin-top:clamp(34px,5vw,60px);height:38px;background:repeating-linear-gradient(
+  -45deg,var(--ink) 0 12px,var(--paper) 12px 24px);opacity:.9}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--blush)}
+.contact h2{font-size:clamp(38px,8.6vw,110px);margin:0 0 clamp(26px,3.4vw,44px)}
+.contact h2 .thin{color:var(--greige)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:clamp(18px,3vw,40px);border-top:1px solid var(--line-on-ink);padding-top:26px}
+.cgrid .lab{color:var(--greige);display:block;margin-bottom:7px}
+.cgrid a{text-decoration:none;border-bottom:1px solid var(--line-on-ink)}
+.cgrid a:hover{border-color:var(--blush)}
+.wabox{display:flex;gap:22px;align-items:center;background:rgba(250,234,225,.08);
+ border:1px solid var(--line-on-ink);padding:22px 26px;margin-top:26px;flex-wrap:wrap}
+.wabox img{width:112px;height:112px;background:var(--blush);padding:9px;flex:none}
+.wabox h4{font-family:Ultra,serif;font-weight:400;color:var(--r2);font-size:22px;margin:0 0 6px;line-height:1.1}
+.wabox p{margin:0;font-size:14px;max-width:44ch;opacity:.86}
+.wabox a.b{display:inline-block;margin-top:12px;background:var(--blush);color:var(--b);text-decoration:none;
+ padding:12px 22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.wabox a.b:hover{background:var(--r2)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:16px var(--gut);background:var(--ink);color:var(--greige);
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  border-top:1px solid var(--line-on-ink)}
+.foot img{height:11px;width:auto;opacity:.75}
+</style>
+
+<header class="top">
+  <span class="mark"><img src="assets/66b47d11eda6.png" alt=""><img src="assets/e86e6b9ccac2.png" alt="growith me."></span>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#methode">Méthode</a>
+    <a href="#travaux">Projets</a>
+    <a href="#tarifs">Formules</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img class="shot" src="assets/6a66dc90680c.jpg" alt="Eva dirigeant un shooting en studio">
+  <span class="veil"></span>
+  <div class="inner">
+    <p class="lab eyebrow">Communication · Direction artistique · Événements</p>
+    <img class="logo" src="assets/e86e6b9ccac2.png" alt="growith me.">
+    <p class="claim">Je construis l'image des marques et des personnes, de la stratégie à l'événement. <b>Je fais sortir le meilleur, et j'aime le faire briller.</b></p>
+  </div>
+</section>
+
+<div class="tick"><div class="tick-in">
+  <span>// Disponible pour de nouveaux projets</span><span>// Bruxelles / Paris</span><span>// Studio de communication et de direction artistique</span><span>// Disponible pour de nouveaux projets</span><span>// Bruxelles / Paris</span><span>// Studio de communication et de direction artistique</span>
+</div></div>
+
+<section class="band" id="services">
+  <div class="sec-head"><span class="lab">Ce que je fais</span><span class="rule"></span></div>
+  <div class="services">
+    <h2 class="d vert">Services</h2>
+    <figure class="collage" style="margin:0">
+      <img class="por" src="assets/561941475130.jpg" alt="Contenu Instagram réalisé à Cannes">
+      <img class="por" src="assets/1337bd8be3c7.jpg" alt="Portrait éditorial réalisé à Cannes">
+      <figcaption>Day content · Cannes · @chlobnr</figcaption>
+    </figure>
+    <div>
+      <div class="acc">
+        <details open><summary>Consulting<span class="plus">+</span></summary>
+          <div class="body">On pose la stratégie, la vision et les objectifs. C'est le point de départ de tout le reste.</div></details>
+        <details><summary>Branding<span class="plus">+</span></summary>
+          <div class="body">On construit l'identité visuelle et l'univers de marque : direction artistique, logo, charte, supports.</div></details>
+        <details><summary>Création de contenu<span class="plus">+</span></summary>
+          <div class="body">On imagine les concepts créatifs et le storytelling : idées, moodboards, formats.</div></details>
+        <details><summary>Shooting<span class="plus">+</span></summary>
+          <div class="body">On produit les visuels, photo et vidéo. Je dirige sur place et je repars avec les images.</div></details>
+        <details><summary>Gestion des réseaux sociaux<span class="plus">+</span></summary>
+          <div class="body">On diffuse, on structure et on fait performer le contenu. Ligne éditoriale, calendrier, publication, suivi.</div></details>
+        <details><summary>Événementiel<span class="plus">+</span></summary>
+          <div class="body">On crée de l'expérience et du lien réel : concept, budget, prestataires, coordination le jour J.</div></details>
+        <details><summary>Accompagnement artistes et influenceurs<span class="plus">+</span></summary>
+          <div class="body">On développe une image et une carrière cohérentes, dans la durée. Négociation, partenariats, moments clés.</div></details>
+        <details><summary>Coaching<span class="plus">+</span></summary>
+          <div class="body">On apprend à incarner sa marque face caméra : posture, langage du corps, confiance.</div></details>
+      </div>
+      <a class="btn" href="#contact">Parlons de votre projet</a>
+    </div>
+  </div>
+</section>
+
+<section class="band mission" id="apropos">
+  <div>
+    <p class="lab" style="opacity:.72;margin:0 0 18px">À propos</p>
+    <p class="sr say">Une marque qui se ressemble tient plus longtemps <em>qu'une marque qui suit</em>.</p>
+    <p class="sub">GWM est une agence de consulting créatif qui aide les créateurs et les marques à bâtir une présence digitale impactante, grâce à une stratégie sur mesure, un branding visuel fort et des expériences événementielles uniques.</p>
+    <p class="sub" style="margin-top:12px;opacity:.72">Derrière l'agence : Eva Bahia, dix ans entre Bruxelles, Lille et Paris, passée par l'événementiel, le cabinet d'image et la gestion d'artiste.</p>
+    <a class="btn" href="#travaux">Nos derniers projets</a>
+  </div>
+  <div class="pics">
+    <img src="assets/0bea96149e47.jpg" alt="Rendez-vous conseil avec des clients">
+    <img src="assets/abec97cc5593.jpg" alt="Launch party de l'agence, septembre 2025">
+  </div>
+</section>
+
+<section class="band process" id="methode">
+  <div class="sec-head"><span class="lab">Comment on travaille</span><span class="rule"></span></div>
+  <div class="proc-wrap">
+    <div class="steps">
+      <div class="step"><span class="n">01</span><div>
+        <h3>On se parle</h3>
+        <p>On part de vos objectifs, de votre audience et de votre voix. J'audite ce qui existe déjà et je vous dis franchement ce qui tient et ce qui ne tient pas.</p></div></div>
+      <div class="step"><span class="n">02</span><div>
+        <h3>Direction artistique</h3>
+        <p>Je construis la ligne : les formats, les couleurs, le ton, le calendrier. Vous voyez à quoi ressemblera votre compte avant qu'on tourne quoi que ce soit.</p></div></div>
+      <div class="step"><span class="n">03</span><div>
+        <h3>Production</h3>
+        <p>Shooting, tournage, montage, publication. Je dirige sur place, et je repars avec les images.</p></div></div>
+      <div class="step"><span class="n">04</span><div>
+        <h3>Suivi</h3>
+        <p>Le rythme, c'est vous qui le choisissez : un point chaque semaine, ou seulement aux étapes clés. Pas un rapport de chiffres, une décision pour la suite.</p></div></div>
+    </div>
+    <h2 class="d vert">Méthode</h2>
+  </div>
+</section>
+
+<section class="band" id="travaux">
+  <div class="sec-head"><span class="lab">Nos derniers projets</span><span class="rule"></span></div>
+  <div class="works">
+    <article class="work featured">
+      <div class="frame"><video src="assets/287711765698.mp4" poster="assets/ebf60bee9e85.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Coulisses du shooting Makena Jewels"></video></div>
+      <div class="txt">
+        <span class="lab">Assistante direction artistique · bijoux · 2026</span>
+        <h3 class="d">Makena Jewels</h3>
+        <p>Assistante à la direction artistique sur un shooting de bijoux : préparation du plateau, styling des mannequins, fonds et lumière. Une journée de production pensée pour alimenter le compte de la marque en contenu.</p>
+        <span class="kpi">Shooting studio · @makena.jewels</span>
+      </div>
+    </article>
+    <article class="work">
+      <div class="frame"><img src="assets/3f39ad840b93.jpg" alt="Affiche du documentaire Métisses" style="object-position:50% 78%"></div>
+      <span class="lab">Relations presse · promotion · 2026</span>
+      <h3 class="d">Métisses</h3>
+      <p>Promotion d'un documentaire franco-belge au-delà de la Belgique : distributeur, podcasts, médias, créateurs en avant-première, édition spéciale au Vendôme.</p>
+      <span class="kpi">52 000+ likes · TV5 Monde · diffusion Arte</span>
+    </article>
+    <article class="work">
+      <div class="frame"><video src="assets/1257e17f332c.mp4" poster="assets/420a95edb17d.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Reel de la launch party growith me."></video></div>
+      <span class="lab">Événement de marque · 2025</span>
+      <h3 class="d">Launch party</h3>
+      <p>L'événement d'annonce de l'agence, imaginé et produit de bout en bout : lieu, scénographie, invités, créateurs de contenu. Quand on vend de l'événementiel, la première preuve est celle qu'on se fait à soi-même.</p>
+      <span class="kpi">6 septembre 2025 · Bruxelles</span>
+      <a class="reel" href="https://www.instagram.com/reel/DOd0NumCDmC/" target="_blank" rel="noopener">Voir le reel</a>
+    </article>
+    <article class="work">
+      <div class="frame"><img src="assets/9936bffeb176.jpg" alt="Visuel sold-out du concert de Gutti au Botanique"></div>
+      <span class="lab">Gestion d'image · artiste · 2024 → 2025</span>
+      <h3 class="d">Gutti</h3>
+      <p>Construire l'image d'un artiste belge jusqu'à son premier concert au Botanique : teaser, annonce, release party, clip, podcasts.</p>
+      <span class="kpi">Sold-out · Botanique · 22.02.2025</span>
+      <a class="reel" href="https://www.instagram.com/reel/DGtHdbVI3U-/" target="_blank" rel="noopener">Voir le reel</a>
+    </article>
+    <article class="work">
+      <div class="frame"><video src="assets/d15ff9081344.mp4" poster="assets/1bfdfe78ae4d.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Séance de consulting avec Anicca"></video></div>
+      <span class="lab">Consulting · réseaux sociaux · 2026</span>
+      <h3 class="d">Anicca</h3>
+      <p>Une session pour la relancer sur les réseaux : diagnostic de son compte, positionnement, et une stratégie taillée pour elle plutôt que pour tout le monde. Shooting de contenu dans la foulée.</p>
+      <span class="kpi">Consulting + direction artistique · @anicca_vh</span>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="tarifs">
+  <div class="sec-head"><span class="lab">Les formules</span><span class="rule"></span></div>
+  <div class="poles">
+    <div class="pole">
+      <span class="lab">Pôle direction artistique</span>
+      <h3>Identité visuelle</h3>
+      <p class="intro">Construire l'univers d'une marque : direction artistique, logo, charte, supports.</p>
+      <div class="offer"><span class="nm">Essentiel</span><span class="pr">600 à 900 €</span>
+        <p class="de">Pour poser une base solide et cohérente.</p></div>
+      <div class="offer"><span class="nm">Identité complète</span><span class="pr">1 200 à 1 600 €</span>
+        <p class="de">L'univers de marque décliné sur vos supports.</p></div>
+      <div class="offer"><span class="nm">Premium · Brand Universe</span><span class="pr">2 000 à 2 800 €</span>
+        <p class="de">L'identité entière, du concept à la signalétique.</p></div>
+    </div>
+    <div class="pole">
+      <span class="lab">Pôle communication</span>
+      <h3>Réseaux sociaux</h3>
+      <p class="intro">Faire exister la marque au quotidien : stratégie, contenu, production.</p>
+      <div class="offer"><span class="nm">Start · présence en ligne</span><span class="pr">600 à 800 € / mois</span>
+        <p class="de">Audit, stratégie de contenu, ligne éditoriale, 6 posts par mois et suivi.</p></div>
+      <div class="offer"><span class="nm">Croissance · développement digital</span><span class="pr">1 000 à 1 300 € / mois</span>
+        <p class="de">Stratégie complète, 8 à 10 posts par mois, stories et reporting.</p></div>
+      <div class="offer"><span class="nm">Premium · direction de communication</span><span class="pr">dès 1 800 € / mois</span>
+        <p class="de">Stratégie globale, production photo et vidéo, gestion totale et campagnes.</p></div>
+    </div>
+  </div>
+  <div class="devis">
+    <p>Petit budget, ou projet qui n'entre dans aucune case ? Chaque demande reçoit un devis personnalisé. Remplissez le questionnaire, on part de là.</p>
+    <a class="btn" href="/brief/" target="_blank" rel="noopener">Remplir le questionnaire</a>
+  </div>
+</section>
+
+<section class="band quote-band">
+  <div class="quote">
+    <p class="mark">“</p>
+    <p class="sr">J'ai eu une bonne expérience avec Eva. Elle est à l'écoute, dynamique et surtout très impliquée dans les projets qu'elle accompagne. Grâce à son travail et à son accompagnement, nous avons réussi à atteindre notre objectif : promouvoir mon premier concert au Botanique et préparer le sold-out.</p>
+    <p class="who">Gutti<span>Concert au Botanique · février 2025</span></p>
+  </div>
+  <div class="stripe"></div>
+</section>
+
+<section class="band contact" id="contact">
+  <h2 class="d">Travaillons <span class="thin">ensemble</span></h2>
+  <div class="cgrid">
+    <div><span class="lab">Écrire</span><a href="mailto:grosjeaneva@outlook.fr">grosjeaneva@outlook.fr</a></div>
+    <div><span class="lab">Appeler</span><a href="tel:+32491114758">+32 491 11 47 58</a></div>
+    <div><span class="lab">Instagram</span><a href="https://instagram.com/growithme.agency" target="_blank" rel="noopener">@growithme.agency</a></div>
+    <div><span class="lab">Où</span>Bruxelles / Paris<br>et partout où il faut être le jour J</div>
+  </div>
+  <div class="wabox">
+    <img src="assets/f5110adf14e1.svg" alt="QR code WhatsApp de growith me.">
+    <div>
+      <h4>Parlons-en sur WhatsApp</h4>
+      <p>Scannez le code avec votre téléphone. Premier appel de trente minutes, gratuit et sans engagement.</p>
+      <a class="b" href="https://wa.me/32491114758" target="_blank" rel="noopener">M'écrire sur WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <img src="assets/e86e6b9ccac2.png" alt="growith me.">
+  <span>Studio de communication · Bruxelles</span>
+  <span>© 2026 growith me.</span>
+</footer>
+
+</body>
+</html>
