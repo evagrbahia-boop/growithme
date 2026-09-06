@@ -97,7 +97,6 @@ button.ghost:hover{background:var(--blush);color:var(--brand)}
 #recap .cta button:hover{background:var(--ink)}
 #recap .cta .why{font-size:13.5px;color:var(--soft);max-width:32ch;margin:0}
 #recap .wa{display:flex;gap:18px;align-items:center;background:var(--blush);padding:18px 20px;margin:0 0 20px;flex-wrap:wrap}
-#recap .wa img{width:104px;height:104px;flex:none;background:#fff;padding:7px}
 #recap .wa .t2{font-weight:600;font-size:15px;margin:0 0 4px}
 #recap .wa p{margin:0;font-size:13.5px;color:var(--soft);max-width:38ch}
 #recap .wa a.b{display:inline-block;margin-top:10px;background:var(--brand);color:var(--blush);
@@ -357,11 +356,10 @@ button.ghost:hover{background:var(--blush);color:var(--brand)}
     <p class="why">Votre récapitulatif part par mail. Je réponds sous 24 h avec une proposition.</p>
   </div>
   <div class="wa">
-    <img src="../assets/f5110adf14e1.svg" alt="QR code WhatsApp de growith me.">
     <div>
-      <p class="t2">Ou parlons-en tout de suite sur WhatsApp</p>
-      <p>Scannez le code avec votre téléphone, ou cliquez si vous êtes déjà dessus. L'appel de trente minutes est gratuit et sans engagement.</p>
-      <a class="b" id="wa" href="https://wa.me/32491114758" target="_blank" rel="noopener">M'écrire sur WhatsApp</a>
+      <p class="t2">Puis réservez votre appel</p>
+      <p>Trente minutes, gratuit et sans engagement. Choisissez votre créneau, nous aurons déjà lu vos réponses.</p>
+      <a class="b" href="https://calendly.com/contact-growithme" target="_blank" rel="noopener">Choisir un créneau</a>
     </div>
   </div>
   <details class="raw">
@@ -500,7 +498,6 @@ button.ghost:hover{background:var(--blush);color:var(--brand)}
     document.getElementById('est').innerHTML=estimate(c.map);
     recap.hidden=false;
     st.textContent='Estimation prête, il ne reste qu’à réserver l’appel.';
-    document.getElementById('wa').href=waLink();
     recap.scrollIntoView({block:'start',behavior:'smooth'});
   });
 
@@ -511,18 +508,6 @@ button.ghost:hover{background:var(--blush);color:var(--brand)}
       +'&body='+encodeURIComponent('Bonjour Eva,\n\nJ’aimerais réserver un appel pour parler de mon projet.\nVoici mes réponses au questionnaire.\n\n'+(built||out.value));
     window.location.href=url;
   });
-
-  function waLink(){
-    var m=collect().map, g=function(k){return (m[k]&&m[k][0])||'';};
-    var t='Bonjour Eva, je viens de remplir le questionnaire.'
-      +'\n\nProjet : '+(g('Projet / marque')||'—')
-      +'\nNom : '+(g('Nom et prénom')||'—')
-      +'\nBesoin : '+(g('Pôle')||'—');
-    var pk=g('Pack DA')||g('Pack Com'); if(pk) t+='\nFormule : '+pk;
-    var du=g('Durée'); if(du) t+='\nDurée : '+du;
-    t+='\n\nJ’aimerais réserver l’appel gratuit.';
-    return 'https://wa.me/32491114758?text='+encodeURIComponent(t);
-  }
 
   document.getElementById('copy').addEventListener('click',function(){
     var b=this;
